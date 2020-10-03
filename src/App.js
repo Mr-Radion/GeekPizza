@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './assets/img/pizza-logo.svg';
-// import './App.css';
 
 function App() {
   return (
