@@ -1,7 +1,13 @@
 import React from 'react';
+import classNames from "classnames";
 
-function Button() {
+function Button ({children, outline}) {
+  // console.log(props);
   return(
-    <button>Добавить</button>
+    <button className={classNames('button', {
+      'button--outline': outline,
+    })}>{children}</button>
   );
 }
+
+export default Button;
