@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './assets/img/pizza-logo.svg';
+// import Button from './Button';
 
 function Header() {
   return (
@@ -12,7 +13,6 @@ function Header() {
             <p>самая вкусная пицца во вселенной</p>
           </div>
         </div>
-        
         <div className="header__cart">
           <a href="/cart.html" className="button button--cart">
             <span>520 ₽</span>
