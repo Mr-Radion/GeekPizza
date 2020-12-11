@@ -5,8 +5,8 @@ import pizzasReducer from "./pizzas";
 
 
 const rootReducer = combineReducers({
-  filtersReducer,
-  pizzasReducer
+  filters: filtersReducer,
+  pizzas: pizzasReducer
 });
 
 export default rootReducer;

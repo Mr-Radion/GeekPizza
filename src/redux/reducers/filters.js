@@ -14,6 +14,12 @@ const filters = (state = initialState, action) => {
       sortBy: action.payload, // Replacement
     };
   }
+  if (action.type === 'SET_CATEGORY') {
+    return {
+      ...state,
+      category: action.payload, 
+    };
+  }
   return state; // If there are no changes, then we return the old values
 };
 
