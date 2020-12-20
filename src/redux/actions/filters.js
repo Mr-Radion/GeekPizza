@@ -1,10 +1,10 @@
 // Action Creator - function returning an object
-export const setSortBy = (name) => ({
+export const setSortBy = ({ type, order }) => ({
   type: 'SET_SORT_BY',
-  payload: name,
+  payload: { type, order },
 });
 
-// Action 
+// Action
 // const setSortBy = ({
 //   type: 'SET_SORT_BY',
 //   payload: name,

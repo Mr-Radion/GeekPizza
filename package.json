@@ -74,7 +74,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "mock": "npx json-server -w public/db.json -p 3001 -d 450",
+    "mock": "npx json-server -w public/db.json --port=3001",
     "server": "npm run start && yarn mock"
   },
   "eslintConfig": {
