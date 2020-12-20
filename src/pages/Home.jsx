@@ -6,9 +6,9 @@ import { fetchPizzas } from '../redux/actions/pizzas';
 
 const categoriesName = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 const sortItems = [
-  { name: 'популярности', type: 'popular' },
-  { name: 'цене', type: 'price' },
-  { name: 'алфавиту', type: 'alphabet' },
+  { name: 'популярности', type: 'popular', order: 'desk' },
+  { name: 'цене', type: 'price', order: 'desk' },
+  { name: 'алфавиту', type: 'name', order: 'ask' },
 ];
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
     // if(!items.length) {
     //   dispatch(fetchPizzas());
     // }
-    dispatch(fetchPizzas());
+    dispatch(fetchPizzas(sortBy, category));
   }, [category, sortBy]);
 
   const onSelectCategory = React.useCallback((index) => {
@@ -40,12 +40,12 @@ function Home() {
           onClickCategory={onSelectCategory}
           items={categoriesName}
         />
-        <SortPopup onClickSortType={onSelectSortType} activeSortType={sortBy} items={sortItems} />
+        <SortPopup onClickSortType={onSelectSortType} activeSortType={sortBy.type} items={sortItems} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
         {
-          isLoaded
+          (isLoaded && items)
             ? items.map((obj) => <PizzaBlock key={obj.id} isLoading={true} {...obj} />)
             : Array(12)
                 .fill(0)
